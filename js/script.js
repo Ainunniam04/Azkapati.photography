@@ -25,7 +25,6 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', isOpen);
 });
 
-// Tutup menu mobile saat salah satu link diklik
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('is-open');
@@ -37,12 +36,10 @@ navLinks.querySelectorAll('a').forEach(link => {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // ===== Form kontak =====
-// CATATAN UNTUK PEMILIK WEBSITE:
-// Form ini belum terhubung ke layanan pengiriman email apa pun.
-// Untuk membuat form ini benar-benar mengirim pesan, pilih salah satu:
-//   1) Gunakan layanan seperti Formspree / Getform / Web3Forms (gratis, tanpa backend).
-//   2) Arahkan tombol "Kirim Pesan" langsung ke WhatsApp (lihat contoh di bawah).
-// Untuk saat ini, form akan menampilkan pesan konfirmasi saja.
+// Form ini mengarahkan pesan customer otomatis ke WhatsApp Anda.
+// GANTI nomor di bawah ini dengan nomor WhatsApp bisnis Anda (format: kode negara tanpa +, tanpa spasi/strip).
+const WA_NUMBER = '6285713221231';
+
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 
@@ -55,16 +52,13 @@ contactForm.addEventListener('submit', (e) => {
   const date = data.get('date');
   const message = data.get('message');
 
-  // Contoh alternatif: arahkan otomatis ke WhatsApp dengan pesan terisi.
-  // Hapus komentar di bawah ini dan sesuaikan nomor WhatsApp jika ingin memakai cara ini:
-  //
-  // const waNumber = '6281234567890';
-  // const waText = encodeURIComponent(
-  //   `Halo Kanya Studio, saya ${name} (${reach}).\nTanggal pernikahan: ${date}\nPesan: ${message}`
-  // );
-  // window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
+  const waText = encodeURIComponent(
+    `Halo Azkapati Studio, saya ${name} (${reach}).\nTanggal pernikahan: ${date}\nPesan: ${message}`
+  );
 
-  formNote.textContent = `Terima kasih, ${name}! Pesan Anda telah dicatat. Kami akan segera menghubungi Anda melalui ${reach}.`;
+  formNote.textContent = `Terima kasih, ${name}! Anda akan diarahkan ke WhatsApp untuk menyelesaikan pengiriman pesan...`;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${waText}`, '_blank');
+
   contactForm.reset();
 });
-
