@@ -53,7 +53,7 @@ document.querySelectorAll('[data-package]').forEach(btn => {
 // ===== Form kontak =====
 // Form ini mengarahkan pesan customer otomatis ke WhatsApp Anda.
 // GANTI nomor di bawah ini dengan nomor WhatsApp bisnis Anda (format: kode negara tanpa +, tanpa spasi/strip).
-const WA_NUMBER = '6281234567890';
+const WA_NUMBER = '6285713221231';
 
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
