@@ -103,7 +103,7 @@
       </div>
       <div class="pkg-row__price">
         <span class="amount">Rp 5.500.000</span>
-        <a href="#kontak" class="btn btn--outline">Pilih Paket</a>
+        <a href="#kontak" class="btn btn--outline" data-package="Silver">Pilih Paket</a>
       </div>
     </article>
 
@@ -131,7 +131,7 @@
       </div>
       <div class="pkg-row__price">
         <span class="amount">Rp 9.800.000</span>
-        <a href="#kontak" class="btn btn--primary">Pilih Paket</a>
+        <a href="#kontak" class="btn btn--primary" data-package="Gold">Pilih Paket</a>
       </div>
     </article>
 
@@ -159,7 +159,7 @@
       </div>
       <div class="pkg-row__price">
         <span class="amount">Rp 15.500.000</span>
-        <a href="#kontak" class="btn btn--outline">Pilih Paket</a>
+        <a href="#kontak" class="btn btn--outline" data-package="Platinum">Pilih Paket</a>
       </div>
     </article>
 
@@ -237,6 +237,15 @@
 
     <form class="contact__form" id="contactForm">
       <p class="eyebrow">Kirim Pesan</p>
+      <label>
+        Paket yang Diminati
+        <select name="package" id="packageSelect">
+          <option value="">Belum yakin / mau tanya-tanya dulu</option>
+          <option value="Silver">Silver — Rp 5.500.000</option>
+          <option value="Gold">Gold — Rp 9.800.000</option>
+          <option value="Platinum">Platinum — Rp 15.500.000</option>
+        </select>
+      </label>
       <label>
         Nama
         <input type="text" name="name" required placeholder="Nama Anda">
