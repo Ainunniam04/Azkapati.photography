@@ -459,7 +459,7 @@ ul{ list-style:none; margin:0; padding:0; }
   display:flex; flex-direction:column; gap:0.5em;
   font-size:0.78rem; letter-spacing:0.04em; text-transform:uppercase; opacity:0.75;
 }
-.contact__form input, .contact__form textarea{
+.contact__form input, .contact__form textarea, .contact__form select{
   font-family:var(--font-body);
   background:rgba(247,243,236,0.06);
   border:1px solid rgba(247,243,236,0.2);
@@ -468,6 +468,23 @@ ul{ list-style:none; margin:0; padding:0; }
   color:var(--ivory);
   font-size:0.95rem;
   resize:vertical;
+}
+.contact__form select{
+  appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F7F3EC' stroke-width='1.6'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 1em center;
+  background-size:16px;
+}
+.contact__form select option{ color:var(--ink); }
+
+.contact__form.form-highlight{
+  animation:formPulse 1.6s cubic-bezier(0.22,1,0.36,1);
+}
+@keyframes formPulse{
+  0%{ box-shadow:0 0 0 0 rgba(169,136,79,0.55); }
+  30%{ box-shadow:0 0 0 10px rgba(169,136,79,0.18); }
+  100%{ box-shadow:0 0 0 0 rgba(169,136,79,0); }
 }
 .contact__form input::placeholder, .contact__form textarea::placeholder{ color:rgba(247,243,236,0.4); }
 .contact__form-note{ font-size:0.85rem; color:var(--rose); min-height:1.2em; }
